@@ -28,3 +28,28 @@ ln -s .dotfiles/zsh/zprofile .zprofile
 ln -s .dotfiles/zsh/zshenv .zshenv
 ln -s .dotfiles/zsh/zshrc .zshrc
 ```
+
+## Install Applications
+
+* PDF Expert: https://pdfexpert.com/
+* Postgres: https://postgresapp.com/downloads.html
+* Cisco AnyConnect: 
+* Spotify
+* WhatsApp
+* VSCODE
+* Sublime Text
+* Iterm
+* MS OFFICE
+* LG Hub
+* Chrome
+* ALfred
+* Paste
+* App Cleaner
+* Docker
+* Fantastical
+* Xnip
+* slack
+* Bitwarden
+* Rectangle
+
+

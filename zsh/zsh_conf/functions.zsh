@@ -14,6 +14,7 @@ function mnt {
 }
 
 ## Add functions
+unalias o
 function o {
   if [ "$1" != "" ]; then
     open $1
@@ -54,3 +55,17 @@ function ff () {
   ' | osascript -
 }
 
+function read_env () {
+  set -o allexport
+  if [ "$1" != "" ]; then
+    source $1
+  else
+    if [ -f app.env ]; then
+      source app.env
+    fi
+    if [ -f app-private.env ]; then
+      source app-private.env
+    fi
+  fi
+  set +o allexport
+}

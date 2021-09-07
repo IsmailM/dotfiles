@@ -13,6 +13,11 @@ pathPrepend() {
   fi
 }
 
+pathAppend "/Applications/Postgres.app/Contents/Versions/latest/bin/"
 pathAppend "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 pathAppend "/Applications/Sublime Text.app/Contents/SharedSupport/bin"
+pathAppend "/Library/TeX/texbin"
+pathAppend "$HOME/Library/Android/sdk/platform-tools"
+pathPrepend $HOME/.local/bin
 pathPrepend $HOME/bin
+

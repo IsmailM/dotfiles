@@ -9,7 +9,6 @@ begin
     config.colored_prompt = true
     config.amazing_print = true
     config.coolline = false
-    config.application_name = MyAwesomeProject
   end
 rescue LoadError => error
   puts "gem install jazz_fingers  # <-- highly recommended"
