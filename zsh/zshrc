@@ -8,7 +8,9 @@ source "${HOME}/.dotfiles/zsh/zsh_conf/fasd.zsh"
 source "${HOME}/.dotfiles/zsh/zsh_conf/functions.zsh"
 source "${HOME}/.dotfiles/zsh/zsh_conf/keybindings.zsh"
 source "${HOME}/.dotfiles/zsh/zsh_conf/path.zsh"
-source ~/perl5/perlbrew/etc/bashrc
+if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
+  source "$HOME/perl5/perlbrew/etc/bashrc"
+fi
 
 setopt interactivecomments
 

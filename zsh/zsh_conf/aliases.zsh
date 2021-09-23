@@ -37,7 +37,7 @@ alias -g G='| grep' # now you can do: ls foo G something
 function fn() { ls **/*$1* }
 
 
-alias ssh="kitty +kitten ssh"
+alias kssh="kitty +kitten ssh"
 
 
 alias ucl="sudo openconnect vpn.ucl.ac.uk --csd-wrapper ~/tmp/ucl-csd-wrapper.sh --authgroup=RemoteAccess --user=ucbtmog"

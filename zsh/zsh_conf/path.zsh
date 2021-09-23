@@ -20,4 +20,4 @@ pathAppend "/Library/TeX/texbin"
 pathAppend "$HOME/Library/Android/sdk/platform-tools"
 pathPrepend $HOME/.local/bin
 pathPrepend $HOME/bin
-
+pathAppend "/Users/ismailm/Library/Python/3.9/bin" 
