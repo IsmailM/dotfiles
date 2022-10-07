@@ -18,6 +18,10 @@ if command -v duf &> /dev/null; then
   alias df='duf'
 fi
 
+if command -v radian &> /dev/null; then
+  alias R='radian'
+fi
+
 
 alias -g ...='../..'
 alias -g ....='../../..'
