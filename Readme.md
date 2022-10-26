@@ -1,14 +1,16 @@
 # Install
 
-## Install Zprezto
-
 ```bash
+## Install Zprezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-```
+
+## Install starship
+curl -sS https://starship.rs/install.sh | sh
+
+## Install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 
 ## Install SpaceVim
-
-```bas
 curl -sLf https://spacevim.org/install.sh | bash
 ```
 
