@@ -16,6 +16,16 @@ setopt interactivecomments
 
 eval "$(starship init zsh)"
 
-export ANDROID_SDK=/Users/imoghul/Library/Android/sdk
 
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+if [ -f "/Users/imoghul/Library/Android/sdk" ]; then
+  export ANDROID_SDK=/Users/imoghul/Library/Android/sdk
+fi
+
+if [ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]; then
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+fi
+
+if [ -f "$HOME/.asdf/asdf.sh" ]; then
+  . $HOME/.asdf/asdf.sh
+fi
+
