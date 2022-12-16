@@ -1,15 +1,19 @@
 pathAppend() {
-  # Only adds to the path if it's not already there
-  if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
-    PATH=$PATH:$1
+  if [ -d $1 ]; then
+    # Only adds to the path if it's not already there
+    if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
+      PATH=$PATH:$1
+    fi
   fi
 }
 
 
 pathPrepend() {
-  # Only adds to the path if it's not already there
-  if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
-    PATH=$PATH:$1
+  if [ -d $1 ]; then
+    # Only adds to the path if it's not already there
+    if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
+      PATH=$PATH:$1
+    fi
   fi
 }
 
