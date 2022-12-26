@@ -29,7 +29,11 @@ ln -s .dotfiles/zsh/zpreztorc .zpreztorc
 ln -s .dotfiles/zsh/zprofile .zprofile
 ln -s .dotfiles/zsh/zshenv .zshenv
 ln -s .dotfiles/zsh/zshrc .zshrc
+
+# Note: ensure the correct cran is set up - https://packagemanager.rstudio.com/client/#/repos/2/overview
+ln -s .dotfiles/Rprofile .Rprofile
 ```
+
 
 ## Install Applications
 
