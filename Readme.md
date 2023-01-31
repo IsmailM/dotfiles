@@ -18,6 +18,8 @@ curl -sLf https://spacevim.org/install.sh | bash
 ## Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+brew install exa duf htop tmux gpg2 
+
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install nodejs latest
