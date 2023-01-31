@@ -1,6 +1,8 @@
 # Install
 
 ```bash
+git clone https://github.com/IsmailM/dotfiles .dotfiles
+
 ## Install Zprezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
@@ -12,6 +14,15 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 
 ## Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
+
+## Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf install nodejs latest
+asdf install ruby latest
+
 ```
 
 ## Set dotfiles
@@ -37,25 +48,27 @@ ln -s .dotfiles/Rprofile .Rprofile
 
 ## Install Applications
 
+* Iterm: https://iterm2.com/downloads.html
 * PDF Expert: https://pdfexpert.com/
 * Postgres: https://postgresapp.com/downloads.html
 * Cisco AnyConnect: 
-* Spotify
-* WhatsApp
-* VSCODE
-* Sublime Text
-* Iterm
+* Spotify: https://www.spotify.com/us/download/mac/
+* VSCODE: https://code.visualstudio.com/download#
+* Sublime Text: https://www.sublimetext.com/download
+* Iterm: https://iterm2.com/downloads.html
+* LG Hub: https://www.logitechg.com/en-gb/innovation/g-hub.html
+* ALfred: https://www.alfredapp.com/
+* Docker: https://www.docker.com/products/docker-desktop/
+* Rectangle: https://rectangleapp.com/
 * MS OFFICE
-* LG Hub
-* Chrome
-* ALfred
+
 * Paste
 * App Cleaner
-* Docker
 * Fantastical
 * Xnip
 * slack
 * Bitwarden
-* Rectangle
+* WhatsApp
+
 
 
