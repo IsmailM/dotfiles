@@ -9,8 +9,8 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 ## Install starship
 curl -sS https://starship.rs/install.sh | sh
 
-## Install asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+## Install RTX
+curl https://rtx.jdxcode.com/install.sh | sh
 
 ## Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
@@ -20,10 +20,9 @@ curl -sLf https://spacevim.org/install.sh | bash
 
 brew install exa duf htop tmux gpg2 
 
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install nodejs latest
-asdf install ruby latest
+rtx global ruby 3.2.0
+rtx global nodejs 19.5.0
+rtx global crystal 1.7.2
 
 ```
 
