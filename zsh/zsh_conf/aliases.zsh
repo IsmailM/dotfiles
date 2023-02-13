@@ -6,12 +6,27 @@ alias gunc='git uncommit'
 alias ka9='killall -9'
 alias k9='kill -9'
 
-
 if command -v exa &> /dev/null; then
-  alias l='exa'
   alias ls="exa"
-  alias ll='exa -l'
   alias la='exa -la'
+  
+  unalias l
+  function l {
+    if [[ ${PWD} = /Users/ismailm ]]; then
+      exa -I 'Music|Movies|Public|Pictures|Library|Applications|Dropbox|Document' $@
+    else
+      exa $@
+    fi
+  }
+
+  unalias ll
+  function ll {
+    if [[ ${PWD} = /Users/ismailm ]]; then
+      exa -I 'Music|Movies|Public|Pictures|Library|Applications|Dropbox|Document' -lh $@
+    else
+      exa -l $@
+    fi
+  }
 fi
 alias du='du -hx'
 if command -v duf &> /dev/null; then
