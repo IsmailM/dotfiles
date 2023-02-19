@@ -69,3 +69,7 @@ function read_env () {
   fi
   set +o allexport
 }
+
+function kport {
+  kill $(lsof -t -i :${1})
+}
