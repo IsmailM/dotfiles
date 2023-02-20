@@ -14,16 +14,6 @@ curl https://rtx.jdxcode.com/install.sh | sh
 
 ## Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
-
-## Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-brew install exa duf htop tmux gpg2 
-
-rtx global ruby 3.2.0
-rtx global nodejs 19.5.0
-rtx global crystal 1.7.2
-
 ```
 
 ## Set dotfiles
@@ -46,6 +36,22 @@ ln -s .dotfiles/zsh/zshrc .zshrc
 ln -s .dotfiles/Rprofile .Rprofile
 ```
 
+## Install Languages
+
+```bash
+rtx global ruby 3.2.0
+rtx global nodejs 19.5.0
+rtx global crystal 1.7.2
+```
+
+## HomeBrew / LinuxBrew
+
+```
+## Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install exa duf htop tmux gpg2 
+```
 
 ## Install Applications
 
