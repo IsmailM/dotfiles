@@ -10,7 +10,7 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 curl -sS https://starship.rs/install.sh | sh
 
 ## Install RTX
-curl https://rtx.jdxcode.com/install.sh | sh
+curl https://rtx.pub/install.sh | sh
 
 ## Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
