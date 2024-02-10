@@ -39,9 +39,7 @@ ln -s .dotfiles/Rprofile .Rprofile
 ## Install Languages
 
 ```bash
-rtx global ruby 3.2.0
-rtx global nodejs 19.5.0
-rtx global crystal 1.7.2
+mise install
 ```
 
 ## HomeBrew / LinuxBrew
