@@ -1,5 +1,5 @@
 source "${HOME}/.dotfiles/bash/bash_conf/aliases.bash"
-source "${HOME}/.dotfiles/bash/bash_conf/fasd.bash"
+# source "${HOME}/.dotfiles/bash/bash_conf/fasd.bash"
 source "${HOME}/.dotfiles/bash/bash_conf/functions.bash"
 source "${HOME}/.dotfiles/bash/bash_conf/keybindings.bash"
 source "${HOME}/.dotfiles/bash/bash_conf/path.bash"

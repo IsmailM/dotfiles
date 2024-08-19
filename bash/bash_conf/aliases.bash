@@ -11,7 +11,7 @@ if command -v exa &> /dev/null; then
   alias la='exa -la'
   
   unalias l 2>/dev/null
-  l() {
+  function l {
     if [[ ${PWD} = /Users/ismailm ]]; then
       exa -I 'Music|Movies|Public|Pictures|Library|Applications|Dropbox|Document' "$@"
     else
@@ -20,7 +20,7 @@ if command -v exa &> /dev/null; then
   }
 
   unalias ll 2>/dev/null
-  ll() {
+  function ll {
     if [[ ${PWD} = /Users/ismailm ]]; then
       exa -I 'Music|Movies|Public|Pictures|Library|Applications|Dropbox|Document' -lh "$@"
     else
@@ -39,23 +39,23 @@ if command -v radian &> /dev/null; then
 fi
 
 # Global aliases are not supported in bash, so these are converted to functions
-..() { cd .. ; }
-...() { cd ../.. ; }
-....() { cd ../../.. ; }
-.....() { cd ../../../.. ; }
-C() { wc -l ; }
-H() { head ; }
-L() { less ; }
-N() { cat > /dev/null ; }
-S() { sort ; }
-G() { grep "$@" ; }
+function .. { cd .. ; }
+function ... { cd ../.. ; }
+function .... { cd ../../.. ; }
+function ..... { cd ../../../.. ; }
+function C { wc -l ; }
+function H { head ; }
+function L { less ; }
+function N { cat > /dev/null ; }
+function S { sort ; }
+function G { grep "$@" ; }
 
 # Functions
 #
 # (f)ind by (n)ame
 # usage: fn foo
 # to find all files containing 'foo' in the name
-fn() { find . -name "*$1*" ; }
+function fn() { find . -name "*$1*" ; }
 
 alias kssh="kitty +kitten ssh"
 
