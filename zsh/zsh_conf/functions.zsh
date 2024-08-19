@@ -73,3 +73,41 @@ function read_env () {
 function kport {
   kill $(lsof -t -i :${1})
 }
+
+# Kill process running on a specified port
+function kpp() {
+    local PORT=$1
+
+    # Check if lsof is installed
+    if ! command -v lsof >/dev/null 2>&1; then
+        echo "lsof command not found. Please install lsof."
+        return 1
+    fi
+
+    # Find process running on the specified port
+    local PROCESS
+    PROCESS=$(lsof -t -i TCP:${PORT} -sTCP:LISTEN)
+
+    if [ -n "$PROCESS" ]; then
+        echo "Found a process ($PROCESS) running on port $PORT"
+
+        # Ask for user confirmation
+        echo -n "Do you want to kill the process running on port $PORT? [y/N] "
+        read confirm
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            # Try a graceful kill first
+            kill "$PROCESS" && sleep 1
+
+            # Check if the process is still running, then forcefully kill it
+            if lsof -Pi TCP:${PORT} -sTCP:LISTEN -t >/dev/null; then
+                echo "Graceful kill failed. Force killing process $PROCESS."
+                kill -9 "$PROCESS"
+            fi
+            echo "Process $PROCESS killed."
+        else
+            echo "Process on port $PORT not killed by user's choice."
+        fi
+    else
+        echo "No process found running on port $PORT."
+    fi
+}

@@ -4,7 +4,8 @@ options(useFancyQuotes = FALSE)
 options(datatable.print.class = TRUE)
 options(datatable.print.keys = TRUE)
 options(repos = c(REPO_NAME =
-  "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"))
+    "https://packagemanager.posit.co/cran/latest"))
+  # "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"))
 options(languageserver.formatting_style = function(options) {
   styler::tidyverse_style(scope = "indention", indent_by = options$tabSize)
 })

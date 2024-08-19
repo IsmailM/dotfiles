@@ -15,4 +15,4 @@ fi
 setopt interactivecomments
 
 eval "$(starship init zsh)"
-eval "$(${HOME}/.local/share/rtx/bin/rtx activate -s zsh)"
+eval "$(/Users/ismailm/.local/bin/mise activate zsh)"

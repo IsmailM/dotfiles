@@ -128,7 +128,7 @@
 [include]
   path = .gitconfig.user
 [user]
-	name = Ismail Moghul
+	name = IsmailM
 	email = ismail.moghul@gmail.com
 [filter "lfs"]
 	clean = git-lfs clean -- %f
