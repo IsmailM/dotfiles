@@ -1,5 +1,5 @@
 alias cls='clear;ls'
-
+alias g='git'
 alias guns='git unstage'
 alias gunc='git uncommit'
 
