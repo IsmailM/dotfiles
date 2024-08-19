@@ -1,0 +1,15 @@
+source "${HOME}/.dotfiles/bash/bash_conf/aliases.bash"
+source "${HOME}/.dotfiles/bash/bash_conf/fasd.bash"
+source "${HOME}/.dotfiles/bash/bash_conf/functions.bash"
+source "${HOME}/.dotfiles/bash/bash_conf/keybindings.bash"
+source "${HOME}/.dotfiles/bash/bash_conf/path.bash"
+
+if [ -f "$HOME/perl5/perlbrew/etc/bashrc" ]; then
+  source "$HOME/perl5/perlbrew/etc/bashrc"
+fi
+
+# Bash doesn't have setopt, so we'll use shopt for similar functionality
+shopt -s interactive_comments
+
+eval "$(starship init bash)"
+eval "$(/Users/ismailm/.local/bin/mise activate bash)"

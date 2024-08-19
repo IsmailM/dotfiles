@@ -1,0 +1,96 @@
+#
+# Executes commands at login pre-bashrc.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+#
+# Browser
+#
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
+fi
+
+#
+# Editors
+#
+
+export EDITOR='nano'
+export VISUAL='nano'
+export PAGER='less'
+
+#
+# Language
+#
+
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
+fi
+
+#
+# Paths
+#
+
+# Ensure path arrays do not contain duplicates.
+# Note: This is not directly possible in bash, so we'll use a function to handle it.
+dedupe_path() {
+  if [ -n "$PATH" ]; then
+    old_PATH=$PATH:; PATH=
+    while [ -n "$old_PATH" ]; do
+      x=${old_PATH%%:*}
+      case $PATH: in
+        *:"$x":*) ;;
+        *) PATH=$PATH:$x;;
+      esac
+      old_PATH=${old_PATH#*:}
+    done
+    PATH=${PATH#:}
+  fi
+}
+
+# Set the the list of directories that cd searches.
+# CDPATH="${CDPATH}:"
+
+# Set the list of directories that Bash searches for programs.
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+dedupe_path
+
+#
+# Less
+#
+
+# Set the default Less options.
+# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
+# Remove -X and -F (exit if the content fits on one screen) to enable it.
+export LESS='-F -g -i -M -R -S -w -X -z-4'
+
+# Set the Less input preprocessor.
+# Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
+if command -v lesspipe >/dev/null 2>&1; then
+  export LESSOPEN="| /usr/bin/env lesspipe %s 2>&-"
+elif command -v lesspipe.sh >/dev/null 2>&1; then
+  export LESSOPEN="| /usr/bin/env lesspipe.sh %s 2>&-"
+fi
+
+#
+# Temporary Files
+#
+
+if [[ ! -d "$TMPDIR" ]]; then
+  export TMPDIR="/tmp/$LOGNAME"
+  mkdir -p -m 700 "$TMPDIR"
+fi
+
+TMPPREFIX="${TMPDIR%/}/bash"
+
+# Set PATH, MANPATH, etc., for Homebrew.
+if [ -f "/opt/homebrew/bin/brew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Added by OrbStack: command-line tools and integration
+if [ -f ~/.orbstack/shell/init.bash ]; then
+  source ~/.orbstack/shell/init.bash 2>/dev/null || :
+fi
