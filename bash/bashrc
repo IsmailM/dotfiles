@@ -12,4 +12,4 @@ fi
 shopt -s interactive_comments
 
 eval "$(starship init bash)"
-eval "$(/Users/ismailm/.local/bin/mise activate bash)"
+eval "$($HOME/.local/bin/mise activate bash)"
