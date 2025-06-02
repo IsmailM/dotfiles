@@ -13,6 +13,8 @@ curl -sS https://starship.rs/install.sh | sh
 
 ## Install mise
 curl https://mise.run | sh
+
+mise install ruby@latest python@latest nodejs@latest bun@latest
 ```
 
 ## Set dotfiles
