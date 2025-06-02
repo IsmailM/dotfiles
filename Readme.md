@@ -1,7 +1,16 @@
 # Install
 
 ```bash
-sudo apt-get install git curl htop zsh tmux duf exa
+sudo apt-get install build-essential libffi-dev libssl-dev zlib1g-dev libreadline-dev git curl htop zsh tmux duf
+# sudo dnf install @development-tools libffi-devel openssl-devel zlib-devel readline-devel git curl htop zsh tmux duf eza
+
+## Install eza
+sudo mkdir -p /etc/apt/keyrings
+wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | sudo tee /etc/apt/sources.list.d/gierens.list
+sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+sudo apt update
+sudo apt install -y eza
 
 git clone https://github.com/IsmailM/dotfiles .dotfiles
 
@@ -13,7 +22,6 @@ curl -sS https://starship.rs/install.sh | sh
 
 ## Install mise
 curl https://mise.run | sh
-
 mise install ruby@latest python@latest nodejs@latest bun@latest
 ```
 
