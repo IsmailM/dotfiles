@@ -1,6 +1,8 @@
 # Install
 
 ```bash
+sudo apt-get install git curl htop zsh tmux duf exa
+
 git clone https://github.com/IsmailM/dotfiles .dotfiles
 
 ## Install Zprezto
@@ -9,11 +11,8 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 ## Install starship
 curl -sS https://starship.rs/install.sh | sh
 
-## Install RTX
+## Install mise
 curl https://mise.run | sh
-
-## Install SpaceVim
-curl -sLf https://spacevim.org/install.sh | bash
 ```
 
 ## Set dotfiles
@@ -48,7 +47,7 @@ mise install
 ## Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install exa duf htop tmux gpg2 
+# brew install exa duf htop tmux gpg2 
 ```
 
 ## Install Applications
